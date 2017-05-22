@@ -1,0 +1,168 @@
+<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="info.bhl.parcodom.MapsActivity" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnParking"
+            android:layout_width="141dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="-19dp"
+            android:layout_marginTop="-5dp"
+            android:text="Parkeergarage"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/btnGasstation"
+            android:layout_width="141dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="-24dp"
+            android:layout_marginTop="-7dp"
+            android:text="Benzinestation"
+            app:layout_constraintLeft_toLeftOf="@+id/btnParking"
+            app:layout_constraintTop_toBottomOf="@+id/btnParking"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/btnParkingLocation"
+            android:layout_width="141dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="-15dp"
+            android:onClick="saveCarlocation"
+            android:text="Parkeerlocatie"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/btnGasstation"
+            app:layout_constraintRight_toRightOf="@+id/btnGasstation"
+            app:layout_constraintTop_toBottomOf="@+id/btnGasstation"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/btnLastPLocation"
+            android:layout_width="141dp"
+            android:layout_height="53dp"
+            android:onClick="displayCarlocation"
+            android:text="Laatste Parkeerlocatie"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnParkeermeter"
+            android:layout_marginRight="0dp"
+            app:layout_constraintRight_toRightOf="@+id/btnParkeermeter"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/btnParkeermeter"
+            app:layout_constraintHorizontal_bias="0.888" />
+
+        <Button
+            android:id="@+id/btnParkeermeter"
+            android:layout_width="140dp"
+            android:layout_height="53dp"
+            android:text="Alle Parkeermeters"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnParkingLocation"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/btnA1"
+            android:layout_width="88dp"
+            android:layout_height="40dp"
+            android:text="Zone A1"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.982" />
+
+        <Button
+            android:id="@+id/btnA2"
+            android:layout_width="88dp"
+            android:layout_height="40dp"
+            android:text="Zone A2"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="0.314"
+            app:layout_constraintVertical_bias="0.982" />
+
+        <Button
+            android:id="@+id/btnB1"
+            android:layout_width="88dp"
+            android:layout_height="40dp"
+            android:text="Zone B1"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="0.628"
+            app:layout_constraintVertical_bias="0.982" />
+
+        <TextView
+            android:id="@+id/tv_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="parent"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            app:layout_constraintTop_toBottomOf="@+id/btnB1"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_lng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="parent"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lat"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

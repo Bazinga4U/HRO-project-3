@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="info.bhl.parcodom">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Parcodom"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Splashscreen"
+            android:label="Parcodom"> <!-- standard start up code, this will activate the splashscreen for the startup in combination with the other code from the splashscreen.  -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="Parcodom"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:label="@string/activity_title_about_us" />
+        <activity
+            android:name=".CalculatorActivity"
+            android:label="Kostenberekenaar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.bhl.parcodom.activity.MainActivity" />
+        </activity>
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <!-- Dit is de API key van Google Maps, hiermee wordt onze map aangestuurd -->
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.bhl.parcodom.activity.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".GraphActivity"
+            android:label="Prijs/tijd Grafiek">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.bhl.parcodom.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GraphActivity2"
+            android:label="Aantal Parkeermeters Grafiek">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.bhl.parcodom.activity.MainActivity" />
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+</manifest>

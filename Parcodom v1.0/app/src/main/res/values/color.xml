@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="A1uur">#33cc33</color>
+    <color name="A1Dag">#004d33</color>
+    <color name="A2uur">#ffff00</color>
+    <color name="A2Dag">#4d4d00</color>
+    <color name="B1uur">#ff0000</color>
+    <color name="B1Dag">#4d0000</color>
+</resources>
